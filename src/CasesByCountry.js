@@ -1,21 +1,19 @@
 class CasesByCountry {
     constructor() {
         this.container = document.createElement("div");
-        this.containerText = document.createElement("p");
+        this.containerTitle = document.createElement("p");
         this.countriesContainer = document.createElement("div");
-        // this.flag = document.createElement("img");
         this.data = {};
     }
 
     render() {
         this.container.classList.add("cases-by-country");
-        this.containerText.classList.add("cases-by-country__text");
-        this.containerText.innerText = `Cases By Country`;
+        this.containerTitle.classList.add("cases-by-country__text");
+        this.containerTitle.innerText = `Cases By Country`;
 
         this.countriesContainer.classList.add("cases-by-country__container");
 
-        this.container.appendChild(this.containerText);
-        // this.container.appendChild(this.flag);
+        this.container.appendChild(this.containerTitle);
         this.container.appendChild(this.countriesContainer);
 
 
