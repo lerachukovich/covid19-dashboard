@@ -23,20 +23,21 @@ body {
   color: @red-color;
   margin-bottom: 10px;
   text-align: center;
-  font-weight: 300;
   display: flex;
   flex-direction: column;
   padding: 10px 0;
 
   &__text {
-    font-max-size: 100%;
     font-size: 1rem;
     margin: 5px 0 10px;
     color: #ffffff;
+    letter-spacing: @letter-spacing;
+    text-transform: uppercase;
   }
 
   &__amount {
     font-size: 2rem;
+    font-weight: 300;
   }
 }
 
@@ -72,6 +73,7 @@ body {
 
 .country-name {
   font-weight: 300;
+  margin: 7px;
 }
 
 .cases-total {
@@ -79,9 +81,12 @@ body {
 }
 .recovered-cases {
   color: @green-color;
+  margin: 7px;
 }
 .death-cases {
   color: #bdbdbd;
+  margin: 7px;
+
 }
 
 .map__container {
