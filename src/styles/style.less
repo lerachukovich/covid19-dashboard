@@ -53,7 +53,7 @@ body {
 
 .slider__items {
   display: flex;
-  max-height: 80vh;
+  max-height: 75vh;
   overflow: scroll;
 }
 
@@ -93,11 +93,17 @@ body {
 .map__container {
   width: 50%;
   margin-right: 10px;
+  #map {
+    height: 100%;
+  }
+  .gm-style .gm-style-iw {
+    color: #333333;
+  }
 }
 
-#map {
-  height: 100%;
-}
+
+
+
 
 .death-cases__container,
 .recovered-cases__container {
@@ -117,9 +123,6 @@ body {
   &__container {
   }
 }
-
-
-
 
 .slider__gallery {
   overflow: hidden;
