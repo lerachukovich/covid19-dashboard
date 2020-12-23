@@ -7,13 +7,35 @@ body {
   display: flex;
   padding: 10px;
   color: #ffffff;
+  @media(max-width: 1000px) {
+    flex-wrap: wrap;
+  }
 }
 .left__container {
   margin-right: 10px;
+  width: 20%;
+  @media(max-width:1000px) {
+  width: 25%;
+}
 }
 .right__container {
   display: flex;
+  width: 20%;
+  @media(max-width: 1000px) {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .slider__items {
+    max-height: 87vh;
+    @media(max-width:1000px) {
+      max-height: 40vh;
+    }
+  }
+  .country__container:first-of-type {
+    margin-top: 0;
+  }
 }
+
 .global__container {
   background-color: @container-background;
   border: @border;
@@ -33,8 +55,11 @@ body {
   }
 
   &__amount {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 300;
+    @media(max-width:1000px) {
+      font-size: 2rem;
+    }
   }
 }
 
@@ -42,51 +67,42 @@ body {
   background-color: @container-background;
   border: @border;
   position: relative;
-  width: 398px;
-  padding: 20px;
+  width: 100%;
   .flag__image {
     max-width: 30px;
+    @media(max-width:1000px) {
+      max-width: 20px;
+    }
   }
 }
 
 .slider__items {
   display: flex;
-  max-height: 75vh;
+  max-height: 73vh;
   overflow: scroll;
+  padding: 0 20px;
+  width: 9999px;
+  margin: 0;
+  list-style: none;
+  transition: margin-left 250ms;
+  @media(max-width:1000px) {
+    max-height: 30vh;
+  }
 }
 
-.slider-cases__inner__container,
-.slider-deaths__inner__container,
-.slider-recovered__inner__container,
-.slider-last-cases__inner__container,
-.slider-last-deaths__inner__container,
-.slider-last-recovered__inner__container,
-.slider-cases-100__inner__container,
-.slider-deaths-100__inner__container,
-.slider-recovered-100__inner__container,
-.slider-last-cases-100__inner__container,
-.slider-last-deaths-100__inner__container,
-.slider-last-recovered-100__inner__container {
-  display: inline-block;
-  width: 25%;
-  max-width: 500px;
+.inner__container {
+  width: 100%;
+  max-width: 400px;
+  margin-right: 100px;
 }
 
-.slider-cases__country__container,
-.slider-deaths__country__container,
-.slider-recovered__country__container,
-.slider-last-cases__country__container,
-.slider-last-deaths__country__container,
-.slider-last-recovered__country__container,
-.slider-cases-100__country__container,
-.slider-deaths-100__country__container,
-.slider-recovered-100__country__container,
-.slider-last-cases-100__country__container,
-.slider-last-deaths-100__country__container,
-.slider-last-recovered-100__country__container{
+.country__container {
   display: flex;
   align-items: center;
   border-bottom: @border;
+}
+.country__container:first-of-type {
+  margin-top: 60px;
 }
 
 .country-name {
@@ -103,34 +119,30 @@ body {
 .deaths__title,
 .recovered__title{
   text-transform: uppercase;
-  font-size: 1.5rem;
-  margin: 10px 0;
+  font-size: 1.3rem;
+  position: fixed;
+  background: @container-background;
+  width: 16%;
+  padding: 20px 0;
+  margin: 0;
+  @media(max-width:1000px) {
+    font-size: 1rem;
+  }
 }
-
+.deaths__title {
+  color: @red-color;
+}
+.recovered__title {
+  color: @green-color;
+}
 .recovered-cases {
   color: @green-color;
   margin-right: 10px;
-
 }
 .death-cases {
   color: @red-color;
   margin-right: 10px;
 }
-
-.map__container {
-  width: 100%;
-  margin-right: 10px;
-  #map {
-    height: 100%;
-  }
-  .gm-style .gm-style-iw {
-    color: #333333;
-  }
-}
-
-
-
-
 
 .death-cases__container,
 .recovered-cases__container {
@@ -145,23 +157,58 @@ body {
 .death-cases-by-country,
 .recovered-cases-by-country {
   border-bottom: @border;
-
-  &__container,
-  &__container {
-  }
 }
 
 .slider__gallery {
   overflow: hidden;
 }
 
-.slider__items {
-  width: 9999px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  transition: margin-left 250ms;
+.buttons__container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  button {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    color: white;
+    background: transparent;
+    outline: none;
+    border: none;
+  }
 }
+
+.map__container {
+  width: 100%;
+  margin-right: 10px;
+  @media(max-width:1000px) {
+    width: 73%;
+    margin-right: 0;
+  }
+  #map {
+    height: 100%;
+  }
+  .gm-style .gm-style-iw {
+    color: #333333;
+  }
+  .legend {
+    padding: 10px 0 0 20px;
+    background-color: #ffffff;
+    opacity: 0.8;
+    color: #333333;
+    border-radius: 20px;
+    @media(max-width:1000px) {
+      height: 110px;
+      overflow: scroll;
+    }
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+
 
 
 
