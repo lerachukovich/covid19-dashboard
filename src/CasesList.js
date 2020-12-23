@@ -1,14 +1,17 @@
-class CasesByCountry {
+class CasesList {
     constructor() {
         this.casesTitle = document.createElement("p");
         this.deathsTitle = document.createElement("p");
         this.recoveredTitle = document.createElement("p");
+
         this.container = document.createElement("div");
         this.sliderGallery = document.createElement("div");
         this.sliderItems = document.createElement("div");
+
         this.buttonsContainer = document.createElement("div");
         this.leftButton = document.createElement("button");
         this.rightButton = document.createElement("button");
+
         this.casesContainer = document.createElement("div");
         this.deathsContainer = document.createElement("div");
         this.recoveredContainer = document.createElement("div");
@@ -21,6 +24,10 @@ class CasesByCountry {
         //название элемента слайдера
         this.sliderGallery.classList.add("slider__gallery");
         this.sliderItems.classList.add("slider__items");
+        this.casesTitle.classList.add("cases__title");
+        this.deathsTitle.classList.add("deaths__title");
+        this.recoveredTitle.classList.add("recovered__title");
+
         //контейнер для всех стран
         this.casesContainer.classList.add("slider-cases__inner__container");
         this.deathsContainer.classList.add("slider-deaths__inner__container");
@@ -58,7 +65,7 @@ class CasesByCountry {
                 flag.src = `${elem.countryInfo.flag}`;
                 casesTotal.innerText = `${elem.cases.toLocaleString()}`;
                 country.innerText = `${elem.country}`;
-                this.casesTitle.innerText = `Total cases by country`;
+                this.casesTitle.innerText = `Total cases`;
 
 
                 totalByCountryContainer.appendChild(casesTotal);
@@ -73,10 +80,10 @@ class CasesByCountry {
                 const flag = document.createElement("img");
                 //контейнер для каждой страны
                 totalByCountryContainer.classList.add("slider-deaths__country__container");
-                casesTotal.classList.add("cases-total");
+                casesTotal.classList.add("death-cases");
                 country.classList.add("country-name");
                 flag.classList.add("flag__image");
-                this.deathsTitle.innerText = 'Total deaths cases by country';
+                this.deathsTitle.innerText = 'Total deaths';
 
                 flag.src = `${elem.countryInfo.flag}`;
                 casesTotal.innerText = `${elem.deaths.toLocaleString()}`;
@@ -92,11 +99,11 @@ class CasesByCountry {
                 const casesTotal = document.createElement("p");
                 const country = document.createElement("p");
                 const flag = document.createElement("img");
-                this.recoveredTitle.innerText = 'Total recovered cases by country';
+                this.recoveredTitle.innerText = 'Total recovered';
 
                 //контейнер для каждой страны
                 totalByCountryContainer.classList.add("slider-recovered__country__container");
-                casesTotal.classList.add("cases-total");
+                casesTotal.classList.add("recovered-cases");
                 country.classList.add("country-name");
                 flag.classList.add("flag__image");
 
@@ -141,4 +148,4 @@ class CasesByCountry {
 
 }
 
-export default CasesByCountry;
+export default CasesList;
