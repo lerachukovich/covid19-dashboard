@@ -19,19 +19,16 @@ class CasesList {
     }
 
     render() {
-        //общий большой контейнер
         this.container.classList.add("slider-cases");
-        //название элемента слайдера
         this.sliderGallery.classList.add("slider__gallery");
         this.sliderItems.classList.add("slider__items");
         this.casesTitle.classList.add("cases__title");
         this.deathsTitle.classList.add("deaths__title");
         this.recoveredTitle.classList.add("recovered__title");
-
-        //контейнер для всех стран
-        this.casesContainer.classList.add("slider-cases__inner__container");
-        this.deathsContainer.classList.add("slider-deaths__inner__container");
-        this.recoveredContainer.classList.add("slider-recovered__inner__container");
+        this.casesContainer.classList.add("inner__container");
+        this.deathsContainer.classList.add("inner__container");
+        this.recoveredContainer.classList.add("inner__container");
+        this.buttonsContainer.classList.add("buttons__container");
         this.leftButton.innerText = `<`;
         this.rightButton.innerText = '>';
         this.leftButton.classList.add("left__btn");
@@ -56,8 +53,7 @@ class CasesList {
                 const casesTotal = document.createElement("p");
                 const country = document.createElement("p");
                 const flag = document.createElement("img");
-                //контейнер для каждой страны
-                totalByCountryContainer.classList.add("slider-cases__country__container");
+                totalByCountryContainer.classList.add("country__container");
                 casesTotal.classList.add("cases-total");
                 country.classList.add("country-name");
                 flag.classList.add("flag__image");
@@ -66,7 +62,6 @@ class CasesList {
                 casesTotal.innerText = `${elem.cases.toLocaleString()}`;
                 country.innerText = `${elem.country}`;
                 this.casesTitle.innerText = `Total cases`;
-
 
                 totalByCountryContainer.appendChild(casesTotal);
                 totalByCountryContainer.appendChild(country);
@@ -78,8 +73,7 @@ class CasesList {
                 const casesTotal = document.createElement("p");
                 const country = document.createElement("p");
                 const flag = document.createElement("img");
-                //контейнер для каждой страны
-                totalByCountryContainer.classList.add("slider-deaths__country__container");
+                totalByCountryContainer.classList.add("country__container");
                 casesTotal.classList.add("death-cases");
                 country.classList.add("country-name");
                 flag.classList.add("flag__image");
@@ -101,8 +95,7 @@ class CasesList {
                 const flag = document.createElement("img");
                 this.recoveredTitle.innerText = 'Total recovered';
 
-                //контейнер для каждой страны
-                totalByCountryContainer.classList.add("slider-recovered__country__container");
+                totalByCountryContainer.classList.add("country__container");
                 casesTotal.classList.add("recovered-cases");
                 country.classList.add("country-name");
                 flag.classList.add("flag__image");
@@ -145,7 +138,6 @@ class CasesList {
         this.data = await res.json();
         return this.data;
     }
-
 }
 
 export default CasesList;

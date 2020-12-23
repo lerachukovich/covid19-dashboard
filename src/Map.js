@@ -12,12 +12,13 @@ class Map {
     }
 
     render() {
+        // documentation
         //https://developers.google.com/maps/documentation/javascript/markers
-        //документация
         const legend = document.createElement("div");
+        legend.classList.add("legend");
         legend.innerHTML = `<div id="legend"><h3>Legend</h3></div>`;
         const div = document.createElement("div");
-        // скопировано из приложения хопкинса - статичная легенда
+        // static legend, copied from https://coronavirus.jhu.edu/map.html
         div.innerHTML = `<div style="display: block;">
     <table width="95%">
         <tbody>
@@ -396,7 +397,6 @@ class Map {
                         }
                     });
 
-                    //добавляем попапы по ховеру
                     marker.addListener("mouseover", () => {
                         infowindow.open(map, marker);
                     });

@@ -3,11 +3,9 @@ class Table {
         this.container = document.createElement("div");
         this.sliderGallery = document.createElement("div");
         this.sliderItems = document.createElement("div");
-
         this.buttonsContainer = document.createElement("div");
         this.leftButton = document.createElement("button");
         this.rightButton = document.createElement("button");
-
         this.casesTitle = document.createElement("p");
         this.deathsTitle = document.createElement("p");
         this.recoveredTitle = document.createElement("p");
@@ -20,8 +18,6 @@ class Table {
         this.lastCasesPer100Title = document.createElement("p");
         this.lastDeathsPer100Title = document.createElement("p");
         this.lastRecoveredPer100Title = document.createElement("p");
-
-        //контейнеры для каждого из показателей
         this.casesContainer = document.createElement("div");
         this.deathsContainer = document.createElement("div");
         this.recoveredContainer = document.createElement("div");
@@ -41,26 +37,23 @@ class Table {
         this.container.classList.add("slider-cases");
         this.sliderGallery.classList.add("slider__gallery");
         this.sliderItems.classList.add("slider__items");
-
         this.buttonsContainer.classList.add("buttons__container");
-        this.casesContainer.classList.add("slider-cases__inner__container");
-        this.deathsContainer.classList.add("slider-deaths__inner__container");
-        this.recoveredContainer.classList.add("slider-recovered__inner__container");
-        this.lastCasesContainer.classList.add("slider-last-cases__inner__container");
-        this.lastDeathsContainer.classList.add("slider-last-deaths__inner__container");
-        this.lastRecoveredContainer.classList.add("slider-last-recovered__inner__container");
-        this.casesPer100Container.classList.add("slider-cases-100__inner__container");
-        this.deathsPer100Container.classList.add("slider-deaths-100__inner__container");
-        this.recoveredPer100Container.classList.add("slider-recovered-100__inner__container");
-        this.lastCasesPer100Container.classList.add("slider-last-cases-100__inner__container");
-        this.lastDeathsPer100Container.classList.add("slider-last-deaths-100__inner__container");
-        this.lastRecoveredPer100Container.classList.add("slider-last-recovered-100__inner__container");
-
+        this.casesContainer.classList.add("inner__container");
+        this.deathsContainer.classList.add("inner__container");
+        this.recoveredContainer.classList.add("inner__container");
+        this.lastCasesContainer.classList.add("inner__container");
+        this.lastDeathsContainer.classList.add("inner__container");
+        this.lastRecoveredContainer.classList.add("inner__container");
+        this.casesPer100Container.classList.add("inner__container");
+        this.deathsPer100Container.classList.add("inner__container");
+        this.recoveredPer100Container.classList.add("inner__container");
+        this.lastCasesPer100Container.classList.add("inner__container");
+        this.lastDeathsPer100Container.classList.add("inner__container");
+        this.lastRecoveredPer100Container.classList.add("inner__container");
         this.leftButton.innerText = `<`;
         this.rightButton.innerText = '>';
         this.leftButton.classList.add("left__btn");
         this.rightButton.classList.add("right__btn");
-
         this.casesContainer.appendChild(this.casesTitle);
         this.deathsContainer.appendChild(this.deathsTitle);
         this.recoveredContainer.appendChild(this.recoveredTitle);
@@ -73,7 +66,6 @@ class Table {
         this.lastCasesPer100Container.appendChild(this.lastCasesPer100Title);
         this.lastDeathsPer100Container.appendChild(this.lastDeathsPer100Title);
         this.lastRecoveredPer100Container.appendChild(this.lastRecoveredPer100Title);
-
         this.container.appendChild(this.sliderGallery).appendChild(this.sliderItems);
         this.container.appendChild(this.buttonsContainer);
         this.buttonsContainer.appendChild(this.leftButton);
@@ -93,13 +85,12 @@ class Table {
 
 
         this.getData().then(content => {
-                //общее кол-во случаев
                 content.forEach( (elem, i) => {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
                     this.casesTitle.innerText = `Total cases`;
-                    totalByCountryContainer.classList.add("slider-cases__country__container");
+                    totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("cases-total");
                     country.classList.add("country-name");
 
@@ -111,15 +102,13 @@ class Table {
                     totalByCountryContainer.appendChild(country);
                     this.casesContainer.appendChild(totalByCountryContainer);
                 });
-                //общее кол-во смертей
                 content.forEach((elem, i) => {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
                     this.deathsTitle.innerText = `Total deaths`;
 
-                    //контейнер для каждой страны
-                    totalByCountryContainer.classList.add("slider-deaths__country__container");
+                    totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("death-cases");
                     country.classList.add("country-name");
 
@@ -130,16 +119,13 @@ class Table {
                     totalByCountryContainer.appendChild(country);
                     this.deathsContainer.appendChild(totalByCountryContainer);
                 });
-                //общее кол-во выздоровевших
                 content.forEach((elem, i) => {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
                     this.recoveredTitle.innerText = `Total recovered`;
 
-
-                    //контейнер для каждой страны
-                    totalByCountryContainer.classList.add("slider-recovered__country__container");
+                    totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("recovered-cases");
                     country.classList.add("country-name");
 
@@ -151,15 +137,13 @@ class Table {
                     this.recoveredContainer.appendChild(totalByCountryContainer);
                 })
 
-                //кол-во кейсов за последний день
                 content.forEach((elem, i) => {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
                     this.lastCasesTitle.innerText = `Last day cases`;
 
-                    //контейнер для каждой страны
-                    totalByCountryContainer.classList.add("slider-last-cases__country__container");
+                    totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("cases-total");
                     country.classList.add("country-name");
 
@@ -170,15 +154,13 @@ class Table {
                     totalByCountryContainer.appendChild(country);
                     this.lastCasesContainer.appendChild(totalByCountryContainer);
                 })
-                //кол-во смертей за последний день
                 content.forEach((elem, i) => {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
                     this.lastDeathsTitle.innerText = `Last day deaths`;
 
-                    //контейнер для каждой страны
-                    totalByCountryContainer.classList.add("slider-last-deaths__country__container");
+                    totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("death-cases");
                     country.classList.add("country-name");
 
@@ -189,15 +171,13 @@ class Table {
                     totalByCountryContainer.appendChild(country);
                     this.lastDeathsContainer.appendChild(totalByCountryContainer);
                 })
-                //кол-во выздоров за последний день
                 content.forEach((elem, i) => {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
                     this.lastRecoveredTitle.innerText = `Last day recovered`;
 
-                    //контейнер для каждой страны
-                    totalByCountryContainer.classList.add("slider-last-recovered__country__container");
+                    totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("recovered-cases");
                     country.classList.add("country-name");
 
@@ -209,15 +189,13 @@ class Table {
                     this.lastRecoveredContainer.appendChild(totalByCountryContainer);
                 })
 
-                //кол-во кейсов на 100 тыс населения
                 content.forEach((elem, i) => {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
                     this.casesPer100Title.innerText = `Number of cases per 100.000 population`;
 
-                    //контейнер для каждой страны
-                    totalByCountryContainer.classList.add("slider-cases-100__country__container");
+                    totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("cases-total");
                     country.classList.add("country-name");
 
@@ -228,15 +206,13 @@ class Table {
                     totalByCountryContainer.appendChild(country);
                     this.casesPer100Container.appendChild(totalByCountryContainer);
                 })
-                //кол-во смертей на 100 тыс населения
                 content.forEach((elem, i) => {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
                     this.deathsPer100Title.innerText = `Number of deaths per 100.000 population`;
 
-                    //контейнер для каждой страны
-                    totalByCountryContainer.classList.add("slider-deaths-100__country__container");
+                    totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("death-cases");
                     country.classList.add("country-name");
 
@@ -247,15 +223,13 @@ class Table {
                     totalByCountryContainer.appendChild(country);
                     this.deathsPer100Container.appendChild(totalByCountryContainer);
                 })
-                //кол-во восст на 100 тыс населения
                 content.forEach((elem, i) => {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
                     this.recoveredPer100Title.innerText = `Number of recovered per 100.000 population`;
 
-                    //контейнер для каждой страны
-                    totalByCountryContainer.classList.add("slider-recovered-100__country__container");
+                    totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("recovered-cases");
                     country.classList.add("country-name");
 
@@ -267,15 +241,13 @@ class Table {
                     this.recoveredPer100Container.appendChild(totalByCountryContainer);
                 })
 
-                //кол0во кейсов за посл день на 100 тыс насел
                 content.forEach((elem, i) => {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
                     this.lastCasesPer100Title.innerText = `Last day cases per 100.000 population`;
 
-                    //контейнер для каждой страны
-                    totalByCountryContainer.classList.add("slider-last-cases-100__country__container");
+                    totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("cases-total");
                     country.classList.add("country-name");
 
@@ -286,15 +258,13 @@ class Table {
                     totalByCountryContainer.appendChild(country);
                     this.lastCasesPer100Container.appendChild(totalByCountryContainer);
                 })
-                //кол0во смертей за посл день на 100 тыс насел
                 content.forEach((elem, i) => {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
                     this.lastDeathsPer100Title.innerText = `Last day deaths per 100.000 population`;
 
-                    //контейнер для каждой страны
-                    totalByCountryContainer.classList.add("slider-last-deaths-100__country__container");
+                    totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("death-cases");
                     country.classList.add("country-name");
 
@@ -306,15 +276,13 @@ class Table {
                     this.lastDeathsPer100Container.appendChild(totalByCountryContainer);
                 })
 
-                //кол0во восст за посл день на 100 тыс насел
                 content.forEach((elem, i) => {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
                     this.lastRecoveredPer100Title.innerText = `Last day recovered per 100.000 population`;
 
-                    //контейнер для каждой страны
-                    totalByCountryContainer.classList.add("slider-last-recovered-100__country__container");
+                    totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("recovered-cases");
                     country.classList.add("country-name");
 

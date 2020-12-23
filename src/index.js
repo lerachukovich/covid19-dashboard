@@ -2,8 +2,6 @@ import './styles/style.less';
 import GlobalCases from "./GlobalCases";
 import CasesList from "./CasesList";
 import Map from "./Map";
-import DeathByCountry from "./DeathByCountry";
-import RecoveredByCountry from "./RecoveredByCountry";
 import Table from "./Table";
 
 const leftContainer = document.createElement("div");
@@ -16,8 +14,6 @@ window.addEventListener('load', function () {
     let casesByCountry = new CasesList();
     casesByCountry.getData();
     let map = new Map();
-    let deathByCountry = new DeathByCountry();
-    let recoveredByCountry = new RecoveredByCountry();
     let table = new Table();
     table.getData();
 
@@ -26,8 +22,6 @@ window.addEventListener('load', function () {
     leftContainer.appendChild(casesByCountry.render());
     document.body.appendChild(map.render());
     document.body.appendChild(rightContainer);
-    // rightContainer.appendChild(deathByCountry.render());
-    // rightContainer.appendChild(recoveredByCountry.render());
     rightContainer.appendChild(table.render());
 });
 
