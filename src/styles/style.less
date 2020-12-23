@@ -13,10 +13,8 @@ body {
 }
 .right__container {
   display: flex;
-  width: 30%;
 }
 .global__container {
-  width: 99%;
   background-color: @container-background;
   border: @border;
   color: @red-color;
@@ -59,14 +57,33 @@ body {
 
 .slider-cases__inner__container,
 .slider-deaths__inner__container,
-.slider-recovered__inner__container {
+.slider-recovered__inner__container,
+.slider-last-cases__inner__container,
+.slider-last-deaths__inner__container,
+.slider-last-recovered__inner__container,
+.slider-cases-100__inner__container,
+.slider-deaths-100__inner__container,
+.slider-recovered-100__inner__container,
+.slider-last-cases-100__inner__container,
+.slider-last-deaths-100__inner__container,
+.slider-last-recovered-100__inner__container {
   display: inline-block;
-  width: 500px;
+  width: 25%;
+  max-width: 500px;
 }
 
 .slider-cases__country__container,
 .slider-deaths__country__container,
-.slider-recovered__country__container {
+.slider-recovered__country__container,
+.slider-last-cases__country__container,
+.slider-last-deaths__country__container,
+.slider-last-recovered__country__container,
+.slider-cases-100__country__container,
+.slider-deaths-100__country__container,
+.slider-recovered-100__country__container,
+.slider-last-cases-100__country__container,
+.slider-last-deaths-100__country__container,
+.slider-last-recovered-100__country__container{
   display: flex;
   align-items: center;
   border-bottom: @border;
@@ -78,20 +95,30 @@ body {
 }
 
 .cases-total {
+  color: @blue-color;
+  margin-right: 10px;
+  font-weight: 900;
+}
+.cases__title,
+.deaths__title,
+.recovered__title{
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.recovered-cases {
+  color: @green-color;
+  margin-right: 10px;
+
+}
+.death-cases {
   color: @red-color;
   margin-right: 10px;
 }
-.recovered-cases {
-  color: @green-color;
-  margin: 7px;
-}
-.death-cases {
-  color: #bdbdbd;
-  margin: 7px;
-}
 
 .map__container {
-  width: 50%;
+  width: 100%;
   margin-right: 10px;
   #map {
     height: 100%;
