@@ -10,7 +10,6 @@ body {
 }
 .left__container {
   margin-right: 10px;
-  width: 20%;
 }
 .right__container {
   display: flex;
@@ -41,43 +40,46 @@ body {
   }
 }
 
-.cases-by-country {
-  display: flex;
-  flex-direction: column;
+.slider-cases {
   background-color: @container-background;
-  width: 99%;
   border: @border;
-  text-align: center;
-  max-height: 84vh;
-  overflow: scroll;
+  position: relative;
+  width: 398px;
+  padding: 20px;
   .flag__image {
-    max-width: 10%;
+    max-width: 30px;
   }
-  &__text {
-    position: fixed;
-    z-index: 1;
-    background-color: @container-background;
-  }
+}
 
-  &__total {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 5px 0;
-    align-items: center;
-    border-bottom: @border;
-  }
-  &__container {
-    margin-top: 40px;
-  }
+.slider__items {
+  display: flex;
+  max-height: 80vh;
+  overflow: scroll;
+}
+
+.slider-cases__inner__container,
+.slider-deaths__inner__container,
+.slider-recovered__inner__container {
+  display: inline-block;
+  width: 500px;
+}
+
+.slider-cases__country__container,
+.slider-deaths__country__container,
+.slider-recovered__country__container {
+  display: flex;
+  align-items: center;
+  border-bottom: @border;
 }
 
 .country-name {
   font-weight: 300;
-  margin: 7px;
+  margin-right: 10px;
 }
 
 .cases-total {
   color: @red-color;
+  margin-right: 10px;
 }
 .recovered-cases {
   color: @green-color;
@@ -86,7 +88,6 @@ body {
 .death-cases {
   color: #bdbdbd;
   margin: 7px;
-
 }
 
 .map__container {
@@ -108,14 +109,37 @@ body {
   margin: 0 5px;
 }
 
-
-
 .death-cases-by-country,
 .recovered-cases-by-country {
   border-bottom: @border;
 
   &__container,
   &__container {
-    margin-top: 50px;
   }
 }
+
+
+
+
+.slider__gallery {
+  overflow: hidden;
+}
+
+.slider__items {
+  width: 9999px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: margin-left 250ms;
+}
+
+
+
+
+
+
+
+
+
+
+
