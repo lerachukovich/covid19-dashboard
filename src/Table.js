@@ -193,7 +193,7 @@ class Table {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
-                    this.casesPer100Title.innerText = `Number of cases per 100.000 population`;
+                    this.casesPer100Title.innerText = `Cases per 100.000 population`;
 
                     totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("cases-total");
@@ -210,7 +210,7 @@ class Table {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
-                    this.deathsPer100Title.innerText = `Number of deaths per 100.000 population`;
+                    this.deathsPer100Title.innerText = `Deaths per 100.000 population`;
 
                     totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("death-cases");
@@ -227,7 +227,7 @@ class Table {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
-                    this.recoveredPer100Title.innerText = `Number of recovered per 100.000 population`;
+                    this.recoveredPer100Title.innerText = `Recovered per 100.000 population`;
 
                     totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("recovered-cases");
@@ -245,7 +245,7 @@ class Table {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
-                    this.lastCasesPer100Title.innerText = `Last day cases per 100.000 population`;
+                    this.lastCasesPer100Title.innerText = `Last day cases per 100.000`;
 
                     totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("cases-total");
@@ -262,7 +262,7 @@ class Table {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
-                    this.lastDeathsPer100Title.innerText = `Last day deaths per 100.000 population`;
+                    this.lastDeathsPer100Title.innerText = `Last day deaths per 100.000`;
 
                     totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("death-cases");
@@ -280,7 +280,7 @@ class Table {
                     const totalByCountryContainer = document.createElement("div");
                     const casesTotal = document.createElement("p");
                     const country = document.createElement("p");
-                    this.lastRecoveredPer100Title.innerText = `Last day recovered per 100.000 population`;
+                    this.lastRecoveredPer100Title.innerText = `Last day recovered per 100.000`;
 
                     totalByCountryContainer.classList.add("country__container");
                     casesTotal.classList.add("recovered-cases");
