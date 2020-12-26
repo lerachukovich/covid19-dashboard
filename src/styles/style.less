@@ -17,12 +17,17 @@ body {
   @media(max-width:1000px) {
   width: 25%;
 }
+  @media(max-width:800px) {
+    width: 100%;
+    margin-bottom: 10px;
+
+  }
 }
 .right__container {
   display: flex;
   width: 20%;
   @media(max-width: 1000px) {
-    width: 100%;
+    width: 99%;
     margin-top: 10px;
   }
   .slider__items {
@@ -94,15 +99,18 @@ body {
   width: 100%;
   max-width: 400px;
   margin-right: 100px;
+  @media(max-width: 800px) {
+    //max-width: 620px;
+  }
+  @media(max-width: 700px) {
+    //width: ;
+  }
 }
 
 .country__container {
   display: flex;
   align-items: center;
   border-bottom: @border;
-}
-.country__container:first-of-type {
-  margin-top: 60px;
 }
 
 .country-name {
@@ -120,9 +128,6 @@ body {
 .recovered__title{
   text-transform: uppercase;
   font-size: 1.3rem;
-  position: fixed;
-  background: @container-background;
-  width: 16%;
   padding: 20px 0;
   margin: 0;
   @media(max-width:1000px) {
@@ -185,6 +190,10 @@ body {
   @media(max-width:1000px) {
     width: 73%;
     margin-right: 0;
+  }
+  @media(max-width: 800px) {
+    height: 400px;
+    width: 100%;
   }
   #map {
     height: 100%;
