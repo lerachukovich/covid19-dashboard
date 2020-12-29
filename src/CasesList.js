@@ -3,22 +3,19 @@ class CasesList {
         this.casesTitle = document.createElement("p");
         this.deathsTitle = document.createElement("p");
         this.recoveredTitle = document.createElement("p");
-
         this.container = document.createElement("div");
         this.sliderGallery = document.createElement("div");
         this.sliderItems = document.createElement("div");
-
         this.buttonsContainer = document.createElement("div");
         this.leftButton = document.createElement("button");
         this.rightButton = document.createElement("button");
-
         this.casesContainer = document.createElement("div");
         this.deathsContainer = document.createElement("div");
         this.recoveredContainer = document.createElement("div");
         this.data = {};
     }
 
-    render() {
+    addClasses() {
         this.container.classList.add("slider-cases");
         this.sliderGallery.classList.add("slider__gallery");
         this.sliderItems.classList.add("slider__items");
@@ -33,11 +30,12 @@ class CasesList {
         this.rightButton.innerText = '>';
         this.leftButton.classList.add("left__btn");
         this.rightButton.classList.add("right__btn");
+    }
 
+    appendElementsToHTML() {
         this.casesContainer.appendChild(this.casesTitle);
         this.deathsContainer.appendChild(this.deathsTitle);
         this.recoveredContainer.appendChild(this.recoveredTitle);
-
         this.container.appendChild(this.sliderGallery).appendChild(this.sliderItems);
         this.container.appendChild(this.buttonsContainer);
         this.buttonsContainer.appendChild(this.leftButton);
@@ -45,7 +43,12 @@ class CasesList {
         this.sliderItems.appendChild(this.casesContainer);
         this.sliderItems.appendChild(this.deathsContainer);
         this.sliderItems.appendChild(this.recoveredContainer);
+    }
 
+
+    render() {
+        this.addClasses();
+        this.appendElementsToHTML();
 
         this.getData().then(content => {
             content.forEach( (elem, i) => {
